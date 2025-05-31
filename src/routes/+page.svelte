@@ -74,6 +74,10 @@
             clearResetTimer();
             total = 0;
             current = 0;
+            if (isBrowser) {
+                localStorage.setItem("total", total.toString());
+                localStorage.setItem("current", current.toString());
+            }
         }, 1000);
     }
 
