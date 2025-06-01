@@ -58,7 +58,11 @@
     let address = "";
 
     if (isBrowser) {
-        address = `${window.location.protocol}//${window.location.hostname}:${window.location.port}`;
+        const isDefaultPort = 
+            (window.location.protocol === 'https:' && window.location.port === '443') ||
+            (window.location.protocol === 'http:' && window.location.port === '80');
+        
+        address = `${window.location.protocol}//${window.location.hostname}${!isDefaultPort ? ':' + window.location.port : ''}${window.location.pathname}`;
     }
 
     let shareText = $derived(

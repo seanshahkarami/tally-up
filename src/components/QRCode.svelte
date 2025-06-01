@@ -20,4 +20,3 @@
 </script>
 
 <div bind:this={qrContainer}></div>
-<p class="text-center text-xs text-gray-500 py-2">{text}</p>
